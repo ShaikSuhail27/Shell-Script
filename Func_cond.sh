@@ -5,15 +5,21 @@
 #to find whether we are in root acess or not
 
 USERID=$(id -u)
+DATE=$(date +%F -%H:%M:%S)
+SCRIPTNAME=$0
+LOGFILE=/tmp/$SCRIPTNAME-$DATE.log
+R="\e[31m" #red
+G="\e[31m" #green
+N="\e[31m" #normal
 
 VALIDATE() { 
 
 if [ $1 -ne 0 ] 
 then 
-echo "$2 Installation is Failure"
+echo "$2 Installation is $R Failure"
 exit 1
 else
-echo "$2 Installation is Success"
+echo "$2 Installation is $G Success"
 fi
 
 }
@@ -24,7 +30,7 @@ echo "ERROR:please go to root access for any installation purpose"
 exit 1 # if any error occurs in shellscript it will not stop by default and we are responsible to stop, if $? =0(success) or $?=(1-127(error))
 fi
 
-yum install mysql -y #My sql installation
+yum install mysql -y &>>$LOGFILE #My sql installation
 VALIDATE $? "MY SQL"
 # if [ $? -ne 0 ] 
 # then 
@@ -34,7 +40,7 @@ VALIDATE $? "MY SQL"
 # echo "MY SQL Installation is Success"
 # fi
 
-yum install postfix -y # PostFix installation
+yum install postfix -y &>>$LOGFILE #PostFix installation
 VALIDATE $? "POST FIX"
 # if [ $? -ne 0 ] 
 # then 
