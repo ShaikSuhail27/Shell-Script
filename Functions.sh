@@ -5,8 +5,8 @@ DATE=$(date +%F-%H:%M:%S)
 SCRIPTNAME=$0
 LOGFILE=/tmp/$SCRIPTNAME-$DATE.log
 # this function is used to validate the previous comands status and inform user whether it is successful or not
-VALIDATE (){
-    if ($1 -ne 0)
+VALIDATE () {
+if ($1 -ne 0)
 then
     echo "$2 Installation is Failure" 
     exit 1
