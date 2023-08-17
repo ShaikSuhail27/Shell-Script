@@ -23,6 +23,7 @@ if rpm -q "$packages" > /dev/null
 then
 echo -e "$packages $Y is already installed $N"
 else
+echo "Installing the $packages package"
 yum install $packages -y &>>LOGFILE
 fi
 # if  [ $? -ne 0 ] 
