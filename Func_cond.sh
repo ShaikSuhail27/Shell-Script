@@ -9,8 +9,8 @@ DATE=$(date +%F-%H:%M:%S)
 SCRIPTNAME=$0
 LOGFILE=/tmp/$SCRIPTNAME-$DATE.log
 R="\e[31m" #red
-G="\e[31m" #green
-N="\e[31m" #normal
+G="\e[32m" #green
+N="\e[0m" #normal
 
 VALIDATE() { 
 
