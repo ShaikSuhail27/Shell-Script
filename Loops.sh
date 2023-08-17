@@ -17,7 +17,7 @@ VALIDATE() {
   fi
 }
 
-for packages in $@
+for packages in $1
 do
 if rpm -q "$packages" > /dev/null
 then
