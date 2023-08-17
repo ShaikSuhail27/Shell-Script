@@ -10,10 +10,10 @@ VALIDATE() {
 
 if [ $1 -ne 0 ] 
 then 
-echo "Installation is Failure"
+echo "$2 Installation is Failure"
 exit 1
 else
-echo "Installation is Success"
+echo "$2 Installation is Success"
 fi
 
 }
@@ -25,7 +25,7 @@ exit 1 # if any error occurs in shellscript it will not stop by default and we a
 fi
 
 yum install mysql -y #My sql installation
-VALIDATE $? 
+VALIDATE $? "MY SQL"
 # if [ $? -ne 0 ] 
 # then 
 # echo "My SQL Installation is Failure"
@@ -35,7 +35,7 @@ VALIDATE $?
 # fi
 
 yum install postfix -y # PostFix installation
-VALIDATE $?
+VALIDATE $? "POST FIX"
 # if [ $? -ne 0 ] 
 # then 
 # echo "PostFIX Installation is Failure"
