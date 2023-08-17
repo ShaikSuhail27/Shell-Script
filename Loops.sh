@@ -20,7 +20,7 @@ for packages in $@
 do
 if rpm -q "$packages" > /dev/null
 then
-echo "$package is already installed"
+echo "$packages is already installed"
 else
 yum install $packages -y &>>LOGFILE
 fi
