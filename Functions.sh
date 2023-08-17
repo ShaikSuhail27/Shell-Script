@@ -1,7 +1,7 @@
 #! /bin/bash/
 
 USERID=$(id -u)
-DATE=$(date +%F - %H %M %S)
+DATE=$(date +%F-%H:%M:%S)
 SCRIPTNAME=$0
 LOGFILE=/tmp/$SCRIPTNAME-$DATE.log
 # this function is used to validate the previous comands status and inform user whether it is successful or not
