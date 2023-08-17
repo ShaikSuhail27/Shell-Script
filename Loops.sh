@@ -1,6 +1,7 @@
 #!/bin/bash
-# DATE=$(date +%F-%H:%M:%S)
-# LOGFILE=
+DATE=$(date +%F-%H:%M:%S)
+SCRIPTNAME=$0
+LOGFILE=/tmp/$SCRIPTNAME-$DATE.log
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
@@ -8,16 +9,16 @@ N="\e[0m"
 VALIDATE() {
   if [ $1 -ne 0 ]
   then
-  echo -e "$2:Installation is $R failure $N"
+  echo -e "$2:Installation is $Rfailure $N"
   exit 1
   else
-  echo -e "$2:Installation is $G successful $N"
+  echo -e "$2:Installation is $Gsuccessful $N"
   fi
 }
 
 for packages in $@
 do
-yum install $packages -y
+yum install $packages -y &>>LOGFILE
 # if  [ $? -ne 0 ] 
 # then
 # echo "$packages: Installation is failure"
