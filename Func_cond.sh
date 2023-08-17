@@ -5,7 +5,7 @@
 #to find whether we are in root acess or not
 
 USERID=$(id -u)
-DATE=$(date +%F -%H:%M:%S)
+DATE=$(date +%F-%H:%M:%S)
 SCRIPTNAME=$0
 LOGFILE=/tmp/$SCRIPTNAME-$DATE.log
 R="\e[31m" #red
@@ -16,10 +16,10 @@ VALIDATE() {
 
 if [ $1 -ne 0 ] 
 then 
-echo "$2 Installation is $R Failure"
+echo -e "$2 Installation is $R Failure"
 exit 1
 else
-echo "$2 Installation is $G Success"
+echo -e "$2 Installation is $G Success"
 fi
 
 }
