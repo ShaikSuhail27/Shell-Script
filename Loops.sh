@@ -18,7 +18,11 @@ VALIDATE() {
 
 for packages in $@
 do
+if dpkg -l | grep -q "$packages" then
+echo "$package is already installed"
+else
 yum install $packages -y &>>LOGFILE
+fi
 # if  [ $? -ne 0 ] 
 # then
 # echo "$packages: Installation is failure"
