@@ -5,6 +5,7 @@ LOGFILE=/tmp/$SCRIPTNAME-$DATE.log
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
+Y="\e[33m"
 
 VALIDATE() {
   if [ $1 -ne 0 ]
@@ -20,7 +21,7 @@ for packages in $@
 do
 if rpm -q "$packages" > /dev/null
 then
-echo "$packages is already installed"
+echo "$packages $Y is already installed"
 else
 yum install $packages -y &>>LOGFILE
 fi
