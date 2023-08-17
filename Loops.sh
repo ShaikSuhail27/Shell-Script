@@ -18,7 +18,7 @@ VALIDATE() {
 
 for packages in $@
 do
-if dpkg -l | grep -q "$packages" 
+if rpm -q "$packages" > /dev/null
 then
 echo "$package is already installed"
 else
