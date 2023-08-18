@@ -21,6 +21,7 @@ VALIDATE() {
 if [ $USERID -ne 0 ]
 then
 echo -e "$R ERROR:please run this script with root access $N"
+exit 1
 fi
 
 for packages in $@
