@@ -32,7 +32,7 @@ echo "Installing the $packages package"
 yum install $packages -y &>>LOGFILE
 VALIDATE $? $packages
 else
-echo "$Y $packages is already installed $N"
+echo -e "$Y $packages is already installed $N"
 fi
 
 # if rpm -q "$packages" > /dev/null
