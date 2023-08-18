@@ -10,7 +10,7 @@ LOGFILE=$LOGDIR/$SCRIPTNAME-$DATE
 
 # Finding the log files inside the directory which is more than 14 days
 
-LOGFILE_TO_FIND =$(find $APP_LOG_DIR -name "*.log" -type f -mtime +14)
+LOGFILE_TO_FIND=$(find $APP_LOG_DIR -name "*.log" -type f -mtime +14)
 echo "$LOGFILE_TO_FIND"
 
 # reading the file line by line and deleting
