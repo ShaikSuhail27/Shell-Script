@@ -28,10 +28,10 @@ do
 if rpm -q "$packages" > /dev/null
 then
 echo -e "$packages $Y is already installed $N"
-VALIDATE $? $packages
 else
 echo "Installing the $packages package"
 yum install $packages -y &>>LOGFILE
+VALIDATE $? $packages
 fi
 # if  [ $? -ne 0 ] 
 # then
