@@ -25,7 +25,7 @@ fi
 
 for packages in $@
 do
-yum installed list $packages
+yum list installed $packages
 if [ $? -ne 0 ]
 then
 echo "Installing the $packages package"
