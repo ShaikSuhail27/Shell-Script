@@ -12,7 +12,7 @@ LOGFILE=$LOGDIR/$SCRIPTNAME-$DATE.log
 
 LOGFILE_TO_FIND=$(find $APP_LOG_DIR -name "*.log" -type f -mtime +14)
 #echo "$LOGFILE_TO_FIND"
-echo "Script executing at $DATE"
+echo "Scripts executing at $DATE"
 
 # reading the file line by line and deleting
 while read line
