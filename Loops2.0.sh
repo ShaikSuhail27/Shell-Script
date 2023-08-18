@@ -2,7 +2,8 @@
 USERID=$(id -u)
 DATE=$(date +%F-%H:%M:%S)
 SCRIPTNAME=$0
-LOGFILE=/tmp/$SCRIPTNAME-$DATE.log
+LOGDIR=/home/centos/shellscript-logs
+LOGFILE=/$LOGDIR/$0-$DATE.log
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
@@ -30,7 +31,7 @@ yum list installed $packages
 if [ $? -ne 0 ]
 then
 echo "Installing the $packages package"
-yum install $packages -y &>>LOGFILE
+yum install $packages -y &>LOGFILE
 VALIDATE $? $packages
 else
 echo -e "$Y $packages is already installed $N"
