@@ -31,7 +31,7 @@ yum list installed $packages &>$LOGFILE
 if [ $? -ne 0 ]
 then
 echo "Installing the $packages package"
-yum install $packages -y 
+yum install $packages -y &>$LOGFILE
 VALIDATE $? $packages
 else
 echo -e "$Y $packages is already installed $N"
