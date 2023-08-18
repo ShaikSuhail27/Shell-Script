@@ -1,4 +1,5 @@
 #!/bin/bash
+USERID =$(id -u)
 DATE=$(date +%F-%H:%M:%S)
 SCRIPTNAME=$0
 LOGFILE=/tmp/$SCRIPTNAME-$DATE.log
@@ -17,11 +18,17 @@ VALIDATE() {
   fi
 }
 
+if [ $USERID -ne 0 ]
+then
+echo "$R ERROR:please run this script with root access $N"
+fi
+
 for packages in $@
 do
 if rpm -q "$packages" > /dev/null
 then
 echo -e "$packages $Y is already installed $N"
+VALIDATE $? $packages
 else
 echo "Installing the $packages package"
 yum install $packages -y &>>LOGFILE
@@ -33,5 +40,4 @@ fi
 # else
 # echo "$packages: Installation is Success"
 # fi
-VALIDATE $? $packages
 done
