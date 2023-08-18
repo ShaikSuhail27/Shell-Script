@@ -16,7 +16,7 @@ echo "$LOGFILE_TO_FIND"
 # reading the file line by line and deleting
 while read line
 do
-echo "deleting $line" &>> $LOGFILE
+echo "deleting $line" &> $LOGFILE
 rm -rf $line
 done <<< $LOGFILE_TO_FIND
 
