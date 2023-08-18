@@ -3,7 +3,7 @@
 #To remove the log files more than 14 days
 
 APP_LOG_DIR=/home/centos/app-logs
-DATE=$(date +%F-%H:%M:%S)
+DATE=$(date +%F)
 SCRIPTNAME=$0
 LOGDIR=/home/centos/shellscript-logs
 LOGFILE=$LOGDIR/$SCRIPTNAME-$DATE.log
