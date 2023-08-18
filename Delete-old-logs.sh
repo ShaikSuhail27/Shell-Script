@@ -6,7 +6,7 @@ APP_LOG_DIR=/home/centos/app-logs
 DATE=$(date +%F-%H:%M:%S)
 SCRIPTNAME=$0
 LOGDIR=/home/centos/shellscript-logs
-LOGFILE=$LOGDIR/$SCRIPTNAME-$DATE
+LOGFILE=$LOGDIR/$SCRIPTNAME-$DATE.log
 
 # Finding the log files inside the directory which is more than 14 days
 
