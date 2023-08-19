@@ -8,4 +8,11 @@ read STRING
 
 REV_STRING=$(echo $STRING | rev)
 
-echo $REV_STRING
+if [ "$STRING" = "$REV_STRING" ] ;
+then
+echo "It is a palindrome"
+else
+echo "It is not a palindrome"
+fi
+
+#echo $REV_STRING
