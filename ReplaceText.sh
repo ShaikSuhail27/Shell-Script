@@ -3,8 +3,8 @@
 # To replace the old word with new word
 
 Input_file=/home/centos/suhail_input.txt
-$old-text="SUHAIL"
-$new-text="suhail"
+Find="SUHAIL"
+Replace="suhail"
 
-Replace=$(sed -i "s/$old-text/$new-text/g" "$Input_file")
+Replace=$(sed -i "s/$Find/$Replace/g" "$Input_file")
 echo "Replacement complete"
