@@ -6,5 +6,5 @@ Input_file=/home/centos/suhail_input.txt
 old-text="SUHAIL"
 new-text="suhail"
 
-Replace=$(sed -i "s/$old-text/$new-text/g" "$Input_file")
+sed -i "s/$old-text/$new-text/g" "$Input_file"
 echo "Replacement complete"
