@@ -5,7 +5,7 @@
 Input_file=/home/centos/suhail_input.txt
 Output_file=/home/centos/suhail_input.txt
 
-while read line
+while read -r line;
 do 
 reverse=$(echo $line | rev)
 echo "$reverse" >> "$Output_file"
