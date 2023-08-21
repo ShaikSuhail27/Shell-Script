@@ -5,7 +5,7 @@
 USERID=$(id -u)
 DATE=$(date +%F-%H:%M:%S)
 SCRIPTNAME=$0
-LOGDIR=/temp/
+LOGDIR=/tmp
 LOGFILE=/tmp/$SCRIPTNAME-$DATE.log
 R="\e[31m"
 G="\e[32m"
