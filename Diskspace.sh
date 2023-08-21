@@ -19,7 +19,7 @@ usage=$(echo $line | awk '{print $6}' | cut -d% -f1)
 partition=$(echo $line | awk '{print $1}')
 if [ $usage -gt $DISK_THRESHOLD ];
 then
-message+="Disk space is using more for this $partition : $usage"
+message+="Disk space is using more for this $partition : $usage /n"
 fi
 done <<< $DISK_USAGE
 
