@@ -24,3 +24,5 @@ fi
 done <<< $DISK_USAGE
 
 echo -e "message:$message"
+
+echo $message | mail -s "HIGH DISK ALERT" shaiksuhail2767@gmail.com
