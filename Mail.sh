@@ -7,6 +7,7 @@ echo "escaped content : $BODY"
 ALERT_TYPE=$4
 MESSAGE=$5
 
-#echo $BODY | mail -s $SUBJECT $TO_ADDRESS
 
-FINAL_BODY=$(sed -e 's/Team_name/DevOps Team/g' -e 's/alert/High Disk alert/g' -e "s/Message/$BODY/" MailTemplate.html)
+FINAL_BODY=$(sed -e "s/Team_name/DevOps Team/g" -e "s/alert/High Disk alert/g" -e "s/Message/$BODY/" MailTemplate.html)
+
+echo "$FINAL_BODY" | mail -s "$SUBJECT" "$TO_ADDRESS"
