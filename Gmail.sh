@@ -23,7 +23,7 @@ fi
 }
 
 #To check whether it is root access or not
-if [ $USERID -ne 0]
+if [ $USERID -ne 0 ] 
 then
 echo "$R ERROR:please run this with root access $N"
 fi
