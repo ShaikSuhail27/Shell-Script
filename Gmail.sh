@@ -25,7 +25,7 @@ fi
 #To check whether it is root access or not
 if [ $USERID -ne 0 ] 
 then
-echo -e "$R ERROR:please run this with root access $N"
+echo -e "$R ERROR:please run this with root access $N" &>> $LOGFILE
 fi
 
 yum update -y --exclude=kernel*
