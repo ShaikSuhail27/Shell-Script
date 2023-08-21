@@ -10,4 +10,4 @@ MESSAGE=$5
 
 FINAL_BODY=$(sed -e "s/Team_name/DevOps Team/g" -e "s/alert/High Disk alert/g" -e "s/Message/$BODY/" MailTemplate.html)
 
-echo "$FINAL_BODY" | mail -s "$SUBJECT" "$TO_ADDRESS"
+echo "$FINAL_BODY" | mail -s "$(echo -e "$SUBJECT\nContent-Type: text/html")" "$TO_ADDRESS"
