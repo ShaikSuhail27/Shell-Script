@@ -14,9 +14,9 @@ DISK_THRESHOLD=1
 while IFS= read line
 do
 #this command is used to print the diskusage in number
-usage =$($line | awk '{print$6}' | cut -d% -f1)
+usage=$($line | awk '{print$6}' | cut -d% -f1)
 partition=$($line | awk '{print$1}')
-if [ $usage -ge $DISK_THRESHOLD ]
+if [ $usage -gt $DISK_THRESHOLD ]
 then
 echo "Disk space is using more for this $partition : $usage"
 fi
