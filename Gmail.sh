@@ -49,7 +49,7 @@ VALIDATE $? "RESTART"
 
 # cp Main.cf /etc/postfix/main.cf &>>$LOGFILE
 #cat Main.cf >> /etc/postfix/main.cf &>>$LOGFILE
-echo -e "$MAIN_CONFIG" >> /etc/postfix/main.cf &>>$LOGFILE
+echo "$MAIN_CONFIG" >> /etc/postfix/main.cf &>>$LOGFILE
 VALIDATE $? "appending" 
 
 touch /etc/postfix/sasl_passwd &>>$LOGFILE
@@ -61,7 +61,7 @@ VALIDATE $? "Creating the file for authentication"
  echo "ENTER THE password : "
  read  PASSWORD
 
- echo "[smtp.gmail.com]:587 $USERNAME:$PASSWORD" >>  /etc/postfix/sasl_passwd
+ echo "[smtp.gmail.com]:587 $USERNAME:$PASSWORD" >> /etc/postfix/sasl_passwd
 
 # [smtp.gmail.com]:587 $USERNAME:$PASSWORD"
 
