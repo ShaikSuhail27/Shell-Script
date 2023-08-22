@@ -16,11 +16,11 @@ echo "ENTER THE USERNAME : "
 read USERNAME
 
 echo "ENTER THE password : "
-read PASSWORD
+read -s PASSWORD
 
 # Function to check the status is Success or Failure
 VALIDATE () {
-if [ $1 -ne 0]
+if [ $1 -ne 0 ]
 then
 echo -e "$R $2 is  failure $N"
 else
