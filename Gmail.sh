@@ -42,7 +42,7 @@ systemctl restart postfix &>>$LOGFILE
 VALIDATE $? "RESTART"
 
 # cp Main.cf /etc/postfix/main.cf &>>$LOGFILE
-cat Main.cf << /etc/postfix/main.cf &>>$LOGFILE
+cat Main.cf >> /etc/postfix/main.cf &>>$LOGFILE
 VALIDATE $? "appending" 
 
 touch /etc/postfix/sasl_passwd &>>$LOGFILE
