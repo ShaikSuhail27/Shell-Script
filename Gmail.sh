@@ -12,11 +12,6 @@ G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 
-# echo "ENTER THE USERNAME : "
-# read USERNAME
-
-# echo "ENTER THE password : "
-# read -sPASSWORD
 
 # Function to check the status is Success or Failure
 VALIDATE () {
@@ -52,8 +47,16 @@ VALIDATE $? "COPYING"
 touch /etc/postfix/sasl_passwd &>>$LOGFILE
 VALIDATE $? "Creating the file for authentication" 
 
-cp SASL_PASSWD /etc/postfix/sasl_passwd &>>$LOGFILE
-VALIDATE $? "adding the user name in file and copying for authentication" 
+ echo "ENTER THE USERNAME : "
+ read  USERNAME
+
+ echo "ENTER THE password : "
+ read -s PASSWORD
+
+[smtp.gmail.com]:587 "$USERNAME":"$PASSWORD"
+
+# cp SASL_PASSWD /etc/postfix/sasl_passwd &>>$LOGFILE
+# VALIDATE $? "adding the user name in file and copying for authentication" 
 
 postmap /etc/postfix/sasl_passwd &>>$LOGFILE
 VALIDATE $? "Postmap" 
