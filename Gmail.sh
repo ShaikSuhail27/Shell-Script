@@ -24,6 +24,7 @@ VALIDATE () {
 if [ $1 -ne 0 ]
 then
 echo -e "$R $2 is  failure$N"
+exit 1
 else
 echo -e "$G $2 is  success$N"
 fi
@@ -33,6 +34,7 @@ fi
 if [ $USERID -ne 0 ] 
 then
 echo -e "$R ERROR:please run this with root access$N" 
+exit 1
 fi
 
 yum update -y --exclude=kernel*  &>>$LOGFILE
