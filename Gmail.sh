@@ -18,6 +18,7 @@ smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
 smtp_sasl_security_options = noanonymous
 smtp_sasl_tls_security_options = noanonymous"
 
+FILENAME="/etc/postfix/main.cf"
 
 # Function to check the status is Success or Failure
 VALIDATE () {
@@ -52,7 +53,7 @@ VALIDATE $? "RESTART"
 # cp Main.cf /etc/postfix/main.cf &>>$LOGFILE
 #cat Main.cf >> /etc/postfix/main.cf &>>$LOGFILE
 #cat "$MAIN_CONFIG" >> /etc/postfix/main.cf &>>$LOGFILE
-cat "/etc/postfix/main.cf" >> $MAIN_CONFIG  &>>$LOGFILE
+cat "$FILENAME" >> $MAIN_CONFIG  &>>$LOGFILE
 VALIDATE $? "appending" 
 
 touch /etc/postfix/sasl_passwd &>>$LOGFILE
