@@ -52,7 +52,7 @@ VALIDATE $? "COPYING"
 # touch /etc/postfix/sasl_passwd &>>$LOGFILE
 # VALIDATE $? "Creating the file for authentication" 
 
-cp SASL_PASSWD /etc/postfix/sasl_passwd &>>$LOGFILE
+cp "SASL_PASSWD"/*.sh /etc/postfix/sasl_passwd &>>$LOGFILE
 VALIDATE $? "adding the user name in file and copying for authentication" 
 
 postmap /etc/postfix/sasl_passwd &>>$LOGFILE
