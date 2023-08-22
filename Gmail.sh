@@ -11,12 +11,12 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
-MAIN_CONFIG="relayhost = [smtp.gmail.com]:587
-smtp_use_tls = yes
-smtp_sasl_auth_enable = yes
-smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
-smtp_sasl_security_options = noanonymous
-smtp_sasl_tls_security_options = noanonymous"
+# MAIN_CONFIG="relayhost = [smtp.gmail.com]:587
+# smtp_use_tls = yes
+# smtp_sasl_auth_enable = yes
+# smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+# smtp_sasl_security_options = noanonymous
+# smtp_sasl_tls_security_options = noanonymous"
 
 
 # Function to check the status is Success or Failure
@@ -52,8 +52,8 @@ VALIDATE $? "RESTART"
 # cp Main.cf /etc/postfix/main.cf &>>$LOGFILE
 #cat Main.cf >> /etc/postfix/main.cf &>>$LOGFILE
 #cat "$MAIN_CONFIG" >> /etc/postfix/main.cf &>>$LOGFILE
-cat /etc/postfix/main.cf >> "$MAIN_CONFIG"  &>>$LOGFILE
-VALIDATE $? "appending" 
+# cat /etc/postfix/main.cf >> "$MAIN_CONFIG"  &>>$LOGFILE
+# VALIDATE $? "appending" 
 
 touch /etc/postfix/sasl_passwd &>>$LOGFILE
 VALIDATE $? "Creating the file for authentication" 
