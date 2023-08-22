@@ -1,1 +1,12 @@
+#!/bin/bash
+
 [smtp.gmail.com]:587 "$USERNAME":"$PASSWORD"
+
+echo "Enter the username : "
+Read USERNAME
+
+echo "Enter the username : "
+Read PASSWORD
+
+
+
