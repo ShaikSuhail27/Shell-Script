@@ -26,7 +26,7 @@ fi
 #To check whether it is root access or not
 if [ $USERID -ne 0 ] 
 then
-echo -e "$R ERROR:please run this with root access $N" 
+echo -e "$R ERROR:please run this with root access$N" 
 fi
 
 yum update -y --exclude=kernel*  &>>$LOGFILE
@@ -41,8 +41,9 @@ VALIDATE $? "ENABLE"
 systemctl restart postfix &>>$LOGFILE
 VALIDATE $? "RESTART"
 
-cp Main.cf /etc/postfix/main.cf &>>$LOGFILE
-VALIDATE $? "COPYING" 
+# cp Main.cf /etc/postfix/main.cf &>>$LOGFILE
+cat Main.cf << /etc/postfix/main.cf &>>$LOGFILE
+VALIDATE $? "appending" 
 
 touch /etc/postfix/sasl_passwd &>>$LOGFILE
 VALIDATE $? "Creating the file for authentication" 
