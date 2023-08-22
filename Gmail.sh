@@ -57,7 +57,7 @@ VALIDATE $? "RESTART"
 # echo "$MAIN_CONFIG" >> "$FILENAME" &>>$LOGFILE
 # VALIDATE $? "appending" 
 
-sed -e 's/$/MAIN_CONFIG/' main.cf &>>$LOGFILE
+sed -e 's/$/MAIN_CONFIG/' $FILENAME &>>$LOGFILE
 VALIDATE $? "appending" 
 
 touch /etc/postfix/sasl_passwd &>>$LOGFILE
