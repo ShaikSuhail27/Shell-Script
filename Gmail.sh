@@ -12,11 +12,11 @@ G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 
-echo "ENTER THE USERNAME : "
-read USERNAME
+# echo "ENTER THE USERNAME : "
+# read USERNAME
 
-echo "ENTER THE password : "
-read -sPASSWORD
+# echo "ENTER THE password : "
+# read -sPASSWORD
 
 # Function to check the status is Success or Failure
 VALIDATE () {
