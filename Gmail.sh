@@ -49,8 +49,8 @@ VALIDATE $? "RESTART"
 cp Main.cf /etc/postfix/main.cf &>>$LOGFILE
 VALIDATE $? "COPYING" 
 
-touch /etc/postfix/sasl_passwd &>>$LOGFILE
-VALIDATE $? "Creating the file for authentication" 
+# touch /etc/postfix/sasl_passwd &>>$LOGFILE
+# VALIDATE $? "Creating the file for authentication" 
 
 cp SASL_PASSWD /etc/postfix/sasl_passwd &>>$LOGFILE
 VALIDATE $? "adding the user name in file and copying for authentication" 
