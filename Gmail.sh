@@ -53,10 +53,12 @@ VALIDATE $? "Creating the file for authentication"
  echo "ENTER THE password : "
  read -s PASSWORD
 
-[smtp.gmail.com]:587 $USERNAME:$PASSWORD
+ echo "[smtp.gmail.com]:587 $USERNAME:$PASSWORD" >>  /etc/postfix/sasl_passwd
 
-# cp SASL_PASSWD /etc/postfix/sasl_passwd &>>$LOGFILE
-# VALIDATE $? "adding the user name in file and copying for authentication" 
+# [smtp.gmail.com]:587 $USERNAME:$PASSWORD"
+
+#  cp SASL_PASSWD /etc/postfix/sasl_passwd &>>$LOGFILE
+#  VALIDATE $? "adding the user name in file and copying for authentication" 
 
 postmap /etc/postfix/sasl_passwd &>>$LOGFILE
 VALIDATE $? "Postmap" 
