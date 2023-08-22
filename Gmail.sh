@@ -17,9 +17,9 @@ Y="\e[33m"
 VALIDATE () {
 if [ $1 -ne 0 ]
 then
-echo -e "$R $2 is  failure $N"
+echo -e "$R $2 is  failure$N"
 else
-echo -e "$G $2 is  success $N"
+echo -e "$G $2 is  success$N"
 fi
 }
 
@@ -63,7 +63,7 @@ VALIDATE $? "Creating the file for authentication"
 postmap /etc/postfix/sasl_passwd &>>$LOGFILE
 VALIDATE $? "Postmap" 
 
-echo "This is a test mail & Date $(date)" | mail -s "message" shaiksuhail2767@gmail.com &>>$LOGFILE
+echo "This is a test mail & Date $(date)" | mail -s "message" shaiksuhail2767@gmail.com 
 VALIDATE $? "sending the mail" 
 
 
