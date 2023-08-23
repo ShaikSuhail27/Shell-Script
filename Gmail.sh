@@ -56,12 +56,12 @@ VALIDATE $? "RESTART"
 # VALIDATE $? "appending" 
 # cat "$FILENAME" >>$MAIN_CONFIG &>>$LOGFILE
 # VALIDATE $? "appending" 
- cat "$MAIN_CONFIG" >> $FILENAME &>>$LOGFILE
+ cat $MAIN_CONFIG >> $FILENAME &>>$LOGFILE
  VALIDATE $? "appending" 
 
 
-  echo "$MAIN_CONFIG" >> $FILENAME &>>$LOGFILE
-  VALIDATE $? "appending" 
+#   echo "$MAIN_CONFIG" >> $FILENAME &>>$LOGFILE
+#   VALIDATE $? "appending" 
 
 # sed -i 's/$/MAIN_CONFIG/' $FILENAME &>>$LOGFILE
 # VALIDATE $? "appending" 
