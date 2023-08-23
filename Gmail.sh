@@ -56,7 +56,7 @@ VALIDATE $? "RESTART"
 # VALIDATE $? "appending" 
 # cat "$FILENAME" >>$MAIN_CONFIG &>>$LOGFILE
 # VALIDATE $? "appending" 
- cat Main.cf >> /etc/postfix/main.cf &>>$LOGFILE
+ cat Main.cf >> $FILENAME &>>$LOGFILE
  VALIDATE $? "appending" 
 
 
@@ -85,7 +85,7 @@ VALIDATE $? "Creating the file for authentication"
 postmap /etc/postfix/sasl_passwd &>>$LOGFILE
 VALIDATE $? "Postmap" 
 
-echo "This is a test mail & Date $(date)" | mail -s "message" shaiksuhail2727@gmail.com 
+echo "This is a test mail & Date $(date)" | mail -s "FINALLY" shaiksuhail2727@gmail.com 
 VALIDATE $? "sending the mail" 
 
 
