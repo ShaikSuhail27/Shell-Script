@@ -11,7 +11,7 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
-MAIN_CONFIG="relayhost = [smtp.gmail.com]:587
+MAIN_CONFIG ="relayhost = [smtp.gmail.com]:587
 smtp_use_tls = yes
 smtp_sasl_auth_enable = yes
 smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
@@ -54,11 +54,12 @@ VALIDATE $? "RESTART"
 #cat Main.cf >> /etc/postfix/main.cf &>>$LOGFILE
 #cat "$MAIN_CONFIG" >> /etc/postfix/main.cf &>>$LOGFILE
 #cat "$FILENAME" >> "$MAIN_CONFIG"  &>>$LOGFILE
-# echo "$MAIN_CONFIG" >> "$FILENAME" &>>$LOGFILE
-# VALIDATE $? "appending" 
 
-sed -i 's/$/MAIN_CONFIG/' $FILENAME &>>$LOGFILE
-VALIDATE $? "appending" 
+ echo "$MAIN_CONFIG" >> "$FILENAME" &>>$LOGFILE
+ VALIDATE $? "appending" 
+
+# sed -i 's/$/MAIN_CONFIG/' $FILENAME &>>$LOGFILE
+# VALIDATE $? "appending" 
 
 touch /etc/postfix/sasl_passwd &>>$LOGFILE
 VALIDATE $? "Creating the file for authentication" 
