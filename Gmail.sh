@@ -85,7 +85,7 @@ VALIDATE $? "Creating the file for authentication"
 postmap /etc/postfix/sasl_passwd &>>$LOGFILE
 VALIDATE $? "Postmap" 
 
-echo "This is a test mail & Date $(date)" | mail -s "message-finally" shaiksuhail2727@gmail.com 
+echo "This is a test mail & Date $(date)" | mail -s "messages-finally" shaiksuhail2727@gmail.com 
 VALIDATE $? "sending the mail" 
 
 
