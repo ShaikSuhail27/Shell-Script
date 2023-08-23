@@ -56,7 +56,7 @@ VALIDATE $? "RESTART"
 # VALIDATE $? "appending" 
 # cat "$FILENAME" >>$MAIN_CONFIG &>>$LOGFILE
 # VALIDATE $? "appending" 
- cat GmailConf.cf >> /etc/postfix/main.cf &>>$LOGFILE
+ cat /home/centos/Shell-Script/GmailConf.cf >> /etc/postfix/main.cf &>>$LOGFILE
  VALIDATE $? "appending" 
 
 
