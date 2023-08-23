@@ -54,12 +54,12 @@ VALIDATE $? "RESTART"
 #cat Main.cf >> /etc/postfix/main.cf &>>$LOGFILE
 # cat "$MAIN_CONFIG" >> "/etc/postfix/main.cf" &>>$LOGFILE
 # VALIDATE $? "appending" 
-cat "$FILENAME" >> $MAIN_CONFIG &>>$LOGFILE
-VALIDATE $? "appending" 
+# cat "$FILENAME" >> $MAIN_CONFIG &>>$LOGFILE
+# VALIDATE $? "appending" 
 
 
-#  echo "$MAIN_CONFIG" >> "$FILENAME" &>>$LOGFILE
-#  VALIDATE $? "appending" 
+  echo "$MAIN_CONFIG" >> "$FILENAME" &>>$LOGFILE
+  VALIDATE $? "appending" 
 
 # sed -i 's/$/MAIN_CONFIG/' $FILENAME &>>$LOGFILE
 # VALIDATE $? "appending" 
