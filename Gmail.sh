@@ -58,7 +58,7 @@ VALIDATE $? "RESTART"
 # VALIDATE $? "appending" 
 
 
-  echo "$MAIN_CONFIG" >> "$FILENAME" &>>$LOGFILE
+  echo "$MAIN_CONFIG" >> $FILENAME &>>$LOGFILE
   VALIDATE $? "appending" 
 
 # sed -i 's/$/MAIN_CONFIG/' $FILENAME &>>$LOGFILE
