@@ -56,7 +56,7 @@ VALIDATE $? "RESTART"
 # VALIDATE $? "appending" 
 # cat "$FILENAME" >>$MAIN_CONFIG &>>$LOGFILE
 # VALIDATE $? "appending" 
- cat /home/centos/Shell-Script/main.cf >> "$FILENAME" &>>$LOGFILE
+ cat "/home/centos/Shell-Script/main.cf">> "$FILENAME" &>>$LOGFILE
 VALIDATE $? "appending" 
 
 
