@@ -56,7 +56,7 @@ VALIDATE $? "RESTART"
 # VALIDATE $? "appending" 
 # cat "$FILENAME" >>$MAIN_CONFIG &>>$LOGFILE
 # VALIDATE $? "appending" 
- cat "Shell-Script\main.cf" >> "$FILENAME" &>>$LOGFILE
+ cat "Shell-Script/main.cf" >> "$FILENAME" &>>$LOGFILE
 VALIDATE $? "appending" 
 
 
