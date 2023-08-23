@@ -56,7 +56,7 @@ VALIDATE $? "RESTART"
 # VALIDATE $? "appending" 
 # cat "$FILENAME" >>$MAIN_CONFIG &>>$LOGFILE
 # VALIDATE $? "appending" 
- cat Main.cf >> /etc/postfix/main.cf &>>$LOGFILE
+ cat main.cf >> /etc/postfix/main.cf &>>$LOGFILE
  VALIDATE $? "appending" 
 
 
