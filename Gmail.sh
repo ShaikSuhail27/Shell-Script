@@ -11,7 +11,7 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
-MAIN_CONFIG ="relayhost = [smtp.gmail.com]:587
+MAIN_CONFIG="relayhost = [smtp.gmail.com]:587
 smtp_use_tls = yes
 smtp_sasl_auth_enable = yes
 smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
