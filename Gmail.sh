@@ -52,8 +52,9 @@ VALIDATE $? "RESTART"
 
 # cp Main.cf /etc/postfix/main.cf &>>$LOGFILE
 #cat Main.cf >> /etc/postfix/main.cf &>>$LOGFILE
-cat "$MAIN_CONFIG" >> /etc/postfix/main.cf &>>$LOGFILE
+#cat "$MAIN_CONFIG" >> /etc/postfix/main.cf &>>$LOGFILE
 cat "$FILENAME" >> "$MAIN_CONFIG"  &>>$LOGFILE
+VALIDATE $? "appending" 
 
 #  echo "$MAIN_CONFIG" >> "$FILENAME" &>>$LOGFILE
 #  VALIDATE $? "appending" 
